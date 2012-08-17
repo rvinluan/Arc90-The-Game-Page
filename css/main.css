@@ -1,0 +1,237 @@
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.center-wrapper {
+	width: 960px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.pixel-font {
+	font-family: "SuperText", Courier, sans-serif;
+	text-transform: uppercase;
+}
+
+body {
+	font-family: "Open Sans", Helvetica, sans-serif;
+	font-size: 20px;
+	min-width: 960px;
+}
+
+header, footer {
+	background-color: #0D3249;
+	color: white;
+}
+
+header {
+	padding: 1em 0;
+}
+
+#logo-a, #logo-b {
+	float: left;
+	margin-top: 0.5em;
+}
+
+#logo-b{
+	margin-top: 1.9em;
+}
+
+.download-area {
+	float:right;
+}
+
+.download-area p {
+	font-size: 0.8em;
+	margin-top: 1em;
+	text-align: center;
+}
+
+#game-area {
+	background: black url("../images/carbon_fibre.png") repeat;
+	box-shadow: 0 9px 10px -9px black inset, 0 -9px 10px -9px black inset;
+	height: 420px;
+	min-width: 960px;
+	position: relative;
+	padding: 1em 0;
+}
+
+#play-button {
+	position: absolute;
+	left: 400px;
+	top: 181px;
+	width: 160px;
+}
+
+.main {
+	background-color: #80B1BC;
+	padding-bottom: 5em; 
+}
+
+.download-button {
+	background-color: #2795C6;
+	border-radius: 5px;
+	box-shadow: #166493 0 -10px 0 inset;
+	-webkit-box-shadow: #166493 0 -10px 0 inset;
+	font-size: 1.2em;
+	color: white;
+	padding: 1em 1em 1.3em 1em;
+	text-decoration: none;
+	text-align: center;
+	display: block;
+}
+
+.download-button:hover {
+	color: #166493;
+}
+
+.download-button:active {
+	position: relative;
+	margin-top: 3px;
+	margin-bottom: 20px;
+	padding: 1em;
+	top: 5px;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+}
+
+#play-button:active {
+	position: absolute;
+	top: 186px;
+}
+
+.instructions {
+	float: left;
+	width: 220px;
+	margin: 1.5em 10px 1em 80px;
+}
+
+.instructions ul {
+	list-style-type: none;
+}
+
+.instructions li {
+	margin: 2em 0;
+}
+
+.keyboard-illo {
+	margin: 0.1em 0;
+}
+
+.instructions h1, .about h1 {
+	font-size: 1em;
+}
+
+.about {
+	float: left;
+	width: 460px;
+	margin: 1.5em 10px 1em 80px;
+}
+
+.about p {
+	margin: 1.5em 0;
+	line-height: 1.5em;
+}
+
+.about .intro {
+	margin-top: 1em;
+	font-size: 1.2em;
+	line-height: 1.3em;
+}
+
+footer {
+	padding: 3em 1em;
+	text-align: center;
+}
+
+.byline {
+	font-size: 0.8em;
+}
+
+.byline p {
+	text-transform: none;
+}
+
+.byline a, .shoutout a, .mobile-opt-out a {
+	color: #26A9E0;
+}
+
+.shoutout {
+	font-size: 0.8em;
+	margin-top: 1em;
+}
+
+.mobile-opt-out {
+	display: none;
+	font-size: 0.7em;
+}
+
+.mobile-version .mobile-opt-out {
+	display: block;
+	margin-top: 1em;
+}
+
+/* mobile site */
+
+@media screen and (max-width: 720px) {
+	body.mobile-version {
+		min-width: 360px;
+	}
+
+	.mobile-version #logo-a, .mobile-version #logo-b {
+		display: block;
+		float: none;
+		margin: 0 auto;
+	}
+
+	.mobile-version #logo-a {
+		width: 235px;
+		margin-top: 1.5em;
+	}
+
+	.mobile-version #logo-b {
+		width: 265px;
+		padding-left: 21px;
+	}
+
+	.mobile-version .center-wrapper,
+	.mobile-version #screenshot {
+		min-width: 360px;
+		width: 360px;
+	}
+
+	.mobile-version #screenshot,
+	.mobile-version #game-area {
+		height: auto;
+		min-width: 360px;
+	}
+
+	.mobile-version #game-area {
+		padding: 0;
+	}
+
+	.mobile-version .download-area,
+	.mobile-version #the-game,
+	.mobile-version #play-button,
+	.mobile-version .instructions {
+		display: none;
+	}
+
+	.mobile-version .about {
+		margin: 2em 1em 1em 1em;
+		width: auto;
+	}
+
+
+}
