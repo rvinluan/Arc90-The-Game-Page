@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!-- Consider specifying the language of your content by adding the `lang` attribute to <html> -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+
+    <title>Arc90: The Game</title>
+    <meta name="description" content="">
+
+    <!-- Mobile viewport optimized: h5bp.com/viewport -->
+    <meta name="viewport" content="width=device-width">
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="fonts/stylesheet.css">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	    <header class="clearfix">
+	    	<div class="center-wrapper">
+		    	<img src="images/logo-Arc90.png" alt="Arc90 The Game" id="logo-a">
+		    	<img src="images/logo-TheGame.png" alt="Arc90 The Game" id="logo-b">
+		    	<div class="download-area">
+		    		<a href="Arc90TheGame.zip" class="download-button pixel-font">DOWNLOAD!</a>
+		    		<p class="platforms">For Windows, Mac, and Linux(.jar)</p>
+		    	</div>
+			</div>
+	    </header>
+	    <div id="game-area">
+	    	<div class="center-wrapper">
+	    		<img src="images/screenshot.png" alt="" width="960" height="420" id="screenshot">
+	    		<div id="the-game" style="display:none">
+					<applet code="org.lwjgl.util.applet.AppletLoader" 
+					        archive="lwjgl_util_applet.jar" 
+					        codebase="." 
+					        width="960" height="420">
+					 
+					  <param name="al_title" value="Arc90: The Game"> 
+					  <param name="al_main" value="org.newdawn.slick.AppletGameContainer"> 
+					  <param name="game" value="arc90.rv.ArcGame">
+					 
+					  <param name="al_jars" value="arc90thegame.jar, lwjgl.jar, slick.jar"> 
+					 
+					  <param name="al_windows" value="windows_natives.jar"> 
+					  <param name="al_linux" value="linux_natives.jar"> 
+					  <param name="al_mac" value="macosx_natives.jar"> 
+					 
+					  <param name="separate_jvm" value="true"> 
+					</applet> 	    		
+	    		</div>
+	    		<a href="" class="download-button pixel-font" id="play-button">Play!</a>
+	    	</div>
+	    </div>
+	    <div class="main clearfix">
+	    	<div class="center-wrapper">
+	  	    	<aside class="instructions">
+		    		<h1 class="pixel-font">Instructions</h1>
+		    		<ul>
+		    			<li>
+		    				<img src="images/left-right.png" alt="Left/Right" class="keyboard-illo">
+		    				<p>walk to build static.</p>
+		    			</li>
+		    			<li>
+		    				<img src="images/spacebar.png" alt="Spacebar" class="keyboard-illo">
+		    				<p>fire static balls.</p>
+		    			</li>
+		    			<li>
+		    				<img src="images/up.png" alt="Up" class="keyboard-illo">
+		    				<p>when you reach the right side of the screen,
+		    					press to advance to the next level.
+		    				</p>
+		    			</li>
+		    		</ul>
+		    	</aside>
+		    	<div class="about">
+		    		<h1 class="pixel-font">About</h1>
+		    		<p class="intro"><em>In January 2010, someone started a thread on Arc90’s Kindling instance to do something about the crazy amount of static electricity in the office. Everyone agreed it was a problem but nobody could do anything about it.</em></p>
+		    		<p><strong>Until now.</strong></p>
+		    		<p>Well ok, the problem isn’t fixed. You still get shocked if you try to go to the bathroom or open any door. It’s just now there’s a game about it.</p>
+		    		<p>As a summer intern at Arc90, I was asked to chat with a bunch of people in the office and use what I learned to make a project. Almost everyone mentioned the static, and when I told them I was making a video game, they suggested I make that an element. So I did.</p>
+		    		<p>The result is Arc90: The Game. You walk around a pixelated version of the office shooting static balls at zombies. Just like in real life.</p>
+		    	</div>
+			</div>
+	    </div> <!-- end of main -->
+	    <footer>
+	    	<div class="byline">
+	    		<img src="images/lab-logo.png" alt="" class="lab-logo">
+	    		<p class="pixel-font">An
+	    			<a href="http://lab.arc90.com">Arc90 Lab</a> experiment by
+	    			<a href="http://robertvinluan.com">Robert Vinluan</a>
+	    		</p>
+	    	</div>
+	    	<p class="shoutout">The best way to experience this game is to play it in real life.
+	    		<a href="http://arc90.com/jobs">arc90.com/jobs</a>
+	    	</p>
+	    	<p class="mobile-opt-out">This is the mobile site. <a id="opt-out-link" href="#" onclick="viewFullSite();">view the full version.</a><p>
+	    </footer>
+    <script type="text/javascript">
+    	var appletbox = document.getElementById('the-game');
+
+    	appletbox.style.display = 'none';
+
+    	window.onresize = function() {
+    		if(window.innerWidth <= 720) {
+    			document.getElementsByTagName('body')[0].className = 'mobile-version';
+    		} else {
+    			document.getElementsByTagName('body')[0].className = '';
+    		}
+    	}
+
+    	function viewFullSite() {
+    			document.getElementsByTagName('body')[0].className = '';
+    	}
+
+    	window.onload = function() {
+    		if(window.innerWidth <= 720) {
+    			document.getElementsByTagName('body')[0].className = 'mobile-version';
+    		}
+
+    		document.getElementById('play-button').addEventListener('click', function(ev){
+    			ev.preventDefault();
+    			appletbox.style.display = 'block';
+    			appletbox.focus();
+    			document.getElementById('screenshot').style.display = 'none';
+    			document.getElementById('play-button').style.display = 'none';
+    		});
+    	}
+    </script>
+</body>
+</html>
